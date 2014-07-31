@@ -1,0 +1,16 @@
+<style>
+
+ul {float:left;}
+h1 {float:left;}
+p {float:left;}
+</style>
+
+<img src ="http://www.pressfire.no/image/screenshots2/1000/1480/1828/ss2.jpg" height="550" width="900" alt="Image failed to load">
+
+
+
+<ul>
+	<% Hero.all.each do |hero| %>
+		<li><%= hero %> </li>
+	<%end %>
+</ul>
