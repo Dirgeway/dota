@@ -1,8 +1,11 @@
-<%= image_tag('dotamap.jpg') %>
-
-
-<ul>
+<ul class='heros'>
 	<% Hero.all.each do |hero| %>
-		<li><%= hero.name %> </li>
+		<li class='hero'><%= hero.name %> </li>
 	<%end %>
 </ul>
+
+<div class='map'>
+	<%= image_tag('dotamap.jpg') %>
+	<ul></ul>
+</div>
+

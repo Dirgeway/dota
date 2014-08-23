@@ -12,5 +12,34 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+$(function(){
+
+  $('.hero').click(function(){
+    $('.hero').removeClass('selected');
+    $(this).addClass('selected');
+  })
+
+
+  $('.map img').click(function(e){
+    var $hero = $('li.selected')
+    var offset = $(this).offset();
+    coordinates = {
+      x: (e.clientX - offset.left),
+      y: (e.clientY - offset.top)
+    }
+
+    $hero.data('coordinates', coordinates)
+
+    $('.map ul').append($hero)
+
+    $hero.removeClass('selected')
+    $hero.css('position', 'absolute')
+    $hero.css('top', coordinates.y)
+    $hero.css('left', coordinates.x)
+
+  })
+
+
+})
